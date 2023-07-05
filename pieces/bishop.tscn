@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyllm10y5ksaj"]
+
+[ext_resource type="Shader" path="res://ChessPieceColor.gdshader" id="1_oelnq"]
+[ext_resource type="Texture2D" uid="uid://b83motyvl858b" path="res://res/imgs/Bishop.png" id="2_imgay"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4c38d"]
+resource_local_to_scene = true
+shader = ExtResource("1_oelnq")
+shader_parameter/whiteColor = Quaternion(0.93, 0.91, 0.8, 1)
+shader_parameter/blackColor = Quaternion(0.16, 0.14, 0.13, 1)
+shader_parameter/isWhite = true
+
+[node name="Pawn" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_4c38d")
+texture = ExtResource("2_imgay")
+centered = false
