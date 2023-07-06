@@ -6,9 +6,13 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4c38d"]
 resource_local_to_scene = true
 shader = ExtResource("1_bbq7d")
-shader_parameter/whiteColor = Quaternion(0.93, 0.91, 0.8, 1)
-shader_parameter/blackColor = Quaternion(0.16, 0.14, 0.13, 1)
+shader_parameter/whiteColor = Color(0.9, 0.89, 0.78, 1)
+shader_parameter/blackColor = Color(0.16, 0.14, 0.13, 1)
+shader_parameter/selected_color = Color(1, 0, 0, 1)
 shader_parameter/isWhite = true
+shader_parameter/selected = false
+shader_parameter/intensity = 3.0
+shader_parameter/blurryVersion = ExtResource("2_y4oe1")
 
 [node name="Pawn" type="Node2D"]
 

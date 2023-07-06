@@ -41,7 +41,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func generate_pieces():
@@ -58,7 +58,7 @@ func board_to_screen_coords(board_coord: Vector2i) -> Vector2i:
 	return Vector2i((board_coord.x - 1) * 8,
 					(8 - board_coord.y) * 8)
 				
-func add_piece(type: String, isWhite: bool, position: Vector2i):
+func add_piece(type: String, isWhite: bool, pos: Vector2i):
 	var scene = null
 	match(type):
 		"pawn":
@@ -76,5 +76,5 @@ func add_piece(type: String, isWhite: bool, position: Vector2i):
 	
 	var new_piece = scene.instantiate()
 	new_piece.get_node("Sprite2D").material.set_shader_parameter("isWhite", isWhite)
-	new_piece.transform = new_piece.transform.translated(board_to_screen_coords(position))
+	new_piece.transform = new_piece.transform.translated(board_to_screen_coords(pos))
 	add_child(new_piece)
